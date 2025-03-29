@@ -1,0 +1,1131 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "ORDS generated API for volunteerApp",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://g9f77d844e8803c-sfns9vc969ib6e8a.adb.us-phoenix-1.oraclecloudapps.com/ords/asco_oic_app/volunteerApp/"
+        }
+    ],
+    "paths": {
+        "/DeleteIntakeRequests": {
+            "delete": {
+                "description": "Remove a record from volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted result."
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "request_id",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ]
+            },
+            "post": {
+                "description": "Create a new record on volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "The successfully created record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "statusMessage": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/volunteerApp_ITEM"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ProcessAuthorizationCode": {
+            "post": {
+                "description": "Create a new record on volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "The successfully created record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "responseCode": {
+                                            "type": "string"
+                                        },
+                                        "statusMessage": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/volunteerApp_ITEM"
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "description": "Retrieve records from volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "validation_result": {
+                                                        "$ref": "#/components/schemas/CHAR"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "AUTHORIZATION_CODE",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "REQUEST_HASHKEY",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/SearchResults": {
+            "get": {
+                "description": "Retrieve records from volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "ach_override_yn": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "approval_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "approved_date": {
+                                                        "$ref": "#/components/schemas/DATE"
+                                                    },
+                                                    "asco_id": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "business_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "co_readonly_yn": {
+                                                        "$ref": "#/components/schemas/CHAR"
+                                                    },
+                                                    "created_by": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "creation_date": {
+                                                        "$ref": "#/components/schemas/DATE"
+                                                    },
+                                                    "executive_email": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "executive_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "expiry_days": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "family_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "given_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "integration_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "middle_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "new_existing_payee": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "oracle_supplier_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "payee_email": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "request_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "request_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "req_exp_date": {
+                                                        "$ref": "#/components/schemas/DATE"
+                                                    },
+                                                    "vo_readonly_yn": {
+                                                        "$ref": "#/components/schemas/CHAR"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "Intake_Approval_Status",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Intake_AscoId",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Intake_FamilyName",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Intake_GivenName",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Intake_PayeeEmail",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Intake_RequestId",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Intake_Status",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Intake_SupplierNumber",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/getAddressFormat": {
+            "get": {
+                "description": "Retrieve records from volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "{}addressformat": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "CountryCode",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/getApprovalHistory": {
+            "get": {
+                "description": "Retrieve records from volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "actedby": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "actiondate": {
+                                                        "$ref": "#/components/schemas/DATE"
+                                                    },
+                                                    "approvalaction": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "comments": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "requestID",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/getApprovalStatusLOV": {
+            "get": {
+                "description": "Retrieve records from volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "approval_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "approval_status_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": []
+            }
+        },
+        "/getCountryLOV": {
+            "get": {
+                "description": "Retrieve records from volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "country_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "country_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": []
+            }
+        },
+        "/getHashKeyByRequestId": {
+            "get": {
+                "description": "Retrieve records from volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "request_hashkey": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "request_id",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/getPaymentMethodDetails": {
+            "get": {
+                "description": "Retrieve records from volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "{}paymentmethods": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "CountryCode",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "HashKey",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/getRequestDetails": {
+            "get": {
+                "description": "Retrieve records from volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "ach_override_yn": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "address_line1": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "address_line2": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "address_line3": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "address_line4": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "approval_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "approved_by": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "approved_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "asco_id": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "bank_account_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "bank_account_type": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "bank_acct_address1": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "bank_acct_address2": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "bank_acct_city": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "bank_acct_country": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "bank_acct_state": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "bank_acct_zipcode": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "bank_contact": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "bank_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "bank_routing_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "building": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "business_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "city": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "country": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "county": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "co_readonly_yn": {
+                                                        "$ref": "#/components/schemas/CHAR"
+                                                    },
+                                                    "created_by": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "creation_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "executive_email": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "executive_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "expense_only_yn": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "expiry_days": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "family_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "floor_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "given_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "home_address_yn": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "iban_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "include_spanish": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "intermediary_bank": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "middle_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "new_existing_payee": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "payee_email": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "payment_method": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "paypal_email_id": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "postal_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "province": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "request_hashkey": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "request_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    },
+                                                    "request_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "req_exp_date": {
+                                                        "$ref": "#/components/schemas/DATE"
+                                                    },
+                                                    "state": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "status_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "swift_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "updated_by": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "updated_date": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "vo_readonly_yn": {
+                                                        "$ref": "#/components/schemas/CHAR"
+                                                    },
+                                                    "w9_file_base64": {
+                                                        "$ref": "#/components/schemas/CLOB"
+                                                    },
+                                                    "w9_file_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "zelle_email_id": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "zelle_phone_number": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "hashKey",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "requestID",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/getRequestIDLOV": {
+            "get": {
+                "description": "Retrieve records from volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "request_id": {
+                                                        "$ref": "#/components/schemas/NUMBER"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": []
+            }
+        },
+        "/getRequestStatusLOV": {
+            "get": {
+                "description": "Retrieve records from volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "request_status": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "status_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": []
+            }
+        },
+        "/getStateLOV": {
+            "get": {
+                "description": "Retrieve records from volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The queried record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "state_code": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    },
+                                                    "state_name": {
+                                                        "$ref": "#/components/schemas/VARCHAR2"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "countryCode",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/processIntakeForm": {
+            "post": {
+                "description": "Create a new record on volunteerApp",
+                "security": [
+                    {
+                        "BasicAuth": []
+                    },
+                    {
+                        "BearerAuth": []
+                    },
+                    {
+                        "OAuth2": []
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "The successfully created record.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "StatusMessage": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/volunteerApp_ITEM"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "BasicAuth": {
+                "type": "http",
+                "scheme": "basic"
+            },
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            },
+            "OAuth2": {
+                "type": "oauth2",
+                "flows": {
+                    "implicit": {
+                        "authorizationUrl": "https://g9f77d844e8803c-sfns9vc969ib6e8a.adb.us-phoenix-1.oraclecloudapps.com/ords/asco_oic_app/oauth/auth",
+                        "scopes": {}
+                    },
+                    "authorizationCode": {
+                        "authorizationUrl": "https://g9f77d844e8803c-sfns9vc969ib6e8a.adb.us-phoenix-1.oraclecloudapps.com/ords/asco_oic_app/oauth/auth",
+                        "tokenUrl": "https://g9f77d844e8803c-sfns9vc969ib6e8a.adb.us-phoenix-1.oraclecloudapps.com/ords/asco_oic_app/oauth/token",
+                        "scopes": {}
+                    },
+                    "clientCredentials": {
+                        "tokenUrl": "https://g9f77d844e8803c-sfns9vc969ib6e8a.adb.us-phoenix-1.oraclecloudapps.com/ords/asco_oic_app/oauth/token",
+                        "scopes": {}
+                    }
+                }
+            }
+        },
+        "schemas": {
+            "CHAR": {
+                "type": "string"
+            },
+            "CLOB": {
+                "type": "string"
+            },
+            "DATE": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-[01]\\d-[0123]\\dT[012]\\d:[0-5]\\d:[0-5]\\d(.\\d+)?(Z|([-+][012]\\d:[0-5]\\d))$"
+            },
+            "NUMBER": {
+                "type": "number"
+            },
+            "STRING": {
+                "type": "string"
+            },
+            "VARCHAR2": {
+                "type": "string"
+            },
+            "volunteerApp_ITEM": {
+                "properties": {
+                    "body_text": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
